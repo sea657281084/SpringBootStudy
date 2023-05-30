@@ -7,5 +7,11 @@ spring:
     username: root
     password: root
 mybatis:
+  # 实体类目录
   type-aliases-package: com.mutest.model
-  mapper-locations: classpath:/mappers/*.xml
+  # 指向mapper文件目录
+  mapper-locations:
+    - classpath:/mappers/*.xml
+#   - classpath:/mappers2/*.xml  如果还有其他路径，追加即可
+  configuration:
+    map-underscore-to-camel-case: true # 驼峰命名规范
