@@ -1,6 +1,7 @@
 package com.mudemo.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.mudemo.common.ResponseInfo;
 import com.mudemo.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -38,8 +39,11 @@ public class GoodsController {
         return goodsService.deleteGood(id);
     }
 
-    @RequestMapping(value = "searchGoods",method = RequestMethod.POST)
-    public JSONObject searchGood(@RequestBody JSONObject request){
+    @RequestMapping(value = "searchGoods", method = RequestMethod.POST)
+    public JSONObject searchGood(@RequestBody JSONObject request) {
         return goodsService.searchGoods(request);
     }
+
+
+
 }
